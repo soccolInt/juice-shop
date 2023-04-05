@@ -26,7 +26,7 @@ pipeline {
         tag_version = "${env.BUILD_ID}"
       }
       steps {
-        withKubeConfig([credentialsID: 'kubeconfig']) {
+        withKubeConfig([credentialsId: 'kubeconfig']) {
           sh 'sed -i "s/{{tag}/$tag_version/g" ./}'
           sh 'kubctl apply -f ./juice-shop.yaml'
         }
