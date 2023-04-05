@@ -5,7 +5,7 @@ pipeline {
     stage ('Build Image') {
       steps {
         script {
-          dockerapp = docker.build("soccolInt/juice-shop", '-f ./Dockerfile ./' )
+          dockerapp = docker.build("soccolint/juice-shop", '-f ./Dockerfile ./' )
         }
       }
     }
