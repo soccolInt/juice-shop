@@ -27,7 +27,6 @@ pipeline {
       }
       steps {
         withKubeConfig([credentialsId: 'kubeconfig']) {
-          sh 'sed -i "s/{{tag}/$tag_version/g" ./}'
           sh 'kubectl apply -f ./juice-shop.yaml'
         }
       }
