@@ -27,7 +27,7 @@ pipeline {
       }
       steps {
         withKubeConfig([credentialsId: 'kubeconfig']) {
-          sh 'kubectl apply -f ./juice-shop.yaml'
+          sh 'microk8s kubectl apply -f ./juice-shop.yaml'
         }
       }
     }
